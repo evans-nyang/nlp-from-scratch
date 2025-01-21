@@ -200,3 +200,10 @@ sudo apt-get autoclean
 ```sh
 nvcc --version
 ```
+
+## Documentation Guides
+
+- [PyTorch Installation Guide](https://pytorch.org/get-started/locally/)
+- [NVIDIA CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)
+- [cuDNN Archive](https://developer.nvidia.com/cudnn-archive)
+- [CUDA Installation Guide](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
