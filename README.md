@@ -47,13 +47,9 @@ ls /usr/local/cuda/lib64 | grep libcudnn
 
 If libcudnn.so.8 does not exist, you need to install the correct version of libcudnn for your CUDA version. You can download the libcudnn library from the [NVIDIA cuDNN Archive](https://developer.nvidia.com/cudnn-archive) and install it following the instructions provided in the libcudnn documentation.
 
-Alternatively, you can check out the [`drivers`](drivers) directory in the root directory for the deb file and install them using the following steps:
+Installation steps:
 
-1. Copy the .deb Package from the downloads directory to your home directory using the following command:
-
-```sh
-cp ~/path/to/nlp-from-scratch/drivers/cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb ~/
-```
+1. Download the CuDNN .deb Package. You can download the CuDNN .deb package from the NVIDIA cuDNN Archive. The package name should be similar to cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb.
 
 2. Install the .deb Package. Use dpkg to install the .deb file:
 
