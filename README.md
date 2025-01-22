@@ -33,13 +33,13 @@ The error indicates that the system cannot locate libcudnn.so.8, which is a crit
 
 ## Solution
 
-Check the CUDA version on your system by running the following command:
+Check the CUDA version on your system by running the following command.
 
 ```shell
 nvcc --version
 ```
 
-Check if libcudnn.so.8 exists in your system:
+Check if libcudnn.so.8 exists in your system.
 
 ```shell
 ls /usr/local/cuda/lib64 | grep libcudnn
@@ -49,39 +49,39 @@ If libcudnn.so.8 does not exist, you need to install the correct version of libc
 
 Installation steps:
 
-1. Download the CuDNN .deb Package. You can download the CuDNN .deb package from the NVIDIA cuDNN Archive. The package name should be similar to cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb.
+1. Download the CuDNN .deb Package. You can download the CuDNN .deb package from the NVIDIA cuDNN Archive. The package name should be similar to `cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb`.
 
-2. Install the .deb Package. Use dpkg to install the .deb file:
+2. Install the .deb Package. Use dpkg to install the `.deb` file.
 
 ```sh
 sudo dpkg -i cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb
 ```
 
-3. Add the GPG Key for the repository to your system. You can do this by copying the keyring file to the /usr/share/keyrings/ directory:
+3. Add the GPG Key for the repository to your system. You can do this by copying the keyring file to the `/usr/share/keyrings/` directory.
 
 ```sh
-sudo cp /var/cudnn-local-repo-ubuntu2204-8.9.7.29/cudnn-local-08A7D361-keyring.gpg /usr/share/keyrings/
+sudo cp /var/cudnn-local-repo-*/cudnn-local-*.gpg /usr/share/keyrings/
 ```
 
-4. Update the Package List Update the package list to include the new repository:
+4. Update the package list to include the new repository.
 
 ```sh
 sudo apt-get update
 ```
 
-5. Install CuDNN Libraries Install the runtime, developer, and documentation libraries:
+5. Install CuDNN Libraries Install the runtime, developer, and documentation libraries.
 
 ```sh
 sudo apt-get install libcudnn8 libcudnn8-dev libcudnn8-samples
 ```
 
-6. Verify that the CuDNN libraries have been installed correctly:
+6. Verify that the CuDNN libraries have been installed correctly.
 
 ```sh
 cat /usr/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
 ```
 
-7. Check if `libcudnn.so.8` is available:
+7. Check if `libcudnn.so.8` is available.
 
 ```sh
 ls /usr/lib/x86_64-linux-gnu/ | grep libcudnn
@@ -98,15 +98,15 @@ You will encounter this exception when running the initial code cell:
 
 ## Workaround Solution
 
-The error above indicates that torchvision is trying to load its image-handling extension, but it failed because the CUDA-related shared library libc10_cuda.so could not be loaded.
+The error above indicates that torchvision is trying to load its image-handling extension, but it failed because the CUDA-related shared library `libc10_cuda.so` could not be loaded.
 
 This is likely due to one of the following reasons:
 
 - CUDA Library Not Found:
-The library libc10_cuda.so is part of PyTorch's CUDA backend. If you don't have a proper CUDA installation or your PyTorch is not installed with GPU support, this error may occur.
+The library `libc10_cuda.so` is part of PyTorch's CUDA backend. If you don't have a proper CUDA installation or your PyTorch is not installed with GPU support, this error may occur.
 
 - Dependencies Missing:
-The warning also mentions libjpeg and libpng. These are libraries used for handling image files. If they were not present during the build of torchvision (or are not installed now), the error could occur.
+The warning also mentions `libjpeg` and `libpng`. These are libraries used for handling image files. If they were not present during the build of torchvision (or are not installed now), the error could occur.
 
 - Environment Issues:
 If the environment where you're running the code isn't properly set up (e.g., conflicting packages or incorrect paths), it can also cause the error.
@@ -119,7 +119,7 @@ nvcc --version
 
 Install the correct cuda version from the [NVIDIA CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive). Preferrably CUDA 11.8 / 12.1 / 12.4 which are compatible with the stable versions of torch, torchaudio and torchvision as documented in this [link](https://pypi.org/project/torch/2.5.1/#nvidia-cuda-support).
 
-You can [select a supported version of CUDA from our support matrix](https://pytorch.org/get-started/locally/)
+You can [select a supported version of CUDA from our support matrix here.](https://pytorch.org/get-started/locally/)
 
 **Tip:** To install the correct version of CUDA (CUDA Toolkit 12.4), follow the instructions provided in the [CUDA Installation Guide](https://developer.nvidia.com/cuda-12-4-0-download-archive).
 
@@ -132,13 +132,13 @@ sudo apt-get clean
 sudo apt-get autoremove
 ```
 
-2. Update the package list, refresh the package list to ensure the system is aware of the latest available packages.
+2. Update the package list to ensure the system is aware of the latest available packages.
 
 ```sh
 sudo apt-get update
 ```
 
-3. Install missing dependencies by manual attempt to fix any broken dependencies
+3. Install missing dependencies by manually attempting to fix any broken dependencies.
 
 ```sh
 sudo apt-get install -f
@@ -150,13 +150,13 @@ sudo apt-get install -f
 sudo apt-get -y install cuda-toolkit-12-4
 ```
 
-5. Verify the installation by checking the CUDA version:
+5. Verify the installation by checking the CUDA version.
 
 ```sh
 nvcc --version
 ```
 
-Install dependencies from [requirements.txt](requirements.txt) file:
+Install dependencies from [requirements.txt](requirements.txt) file using the command below:
 
 ```sh
 pip install -r requirements.txt
@@ -166,32 +166,32 @@ pip install -r requirements.txt
 
 To remove the cuda insallation:
 
-1. List cuda installation
+1. List cuda installation.
 
 ```sh
 dpkg -l | grep cuda
 ```
 
-2. Run the following command to remove all CUDA-related packages
+2. Run the following command to remove all CUDA-related packages.
 
 ```sh
 sudo apt-get --purge remove '*cuda*' '*nvidia*'
 ```
 
-3. Remove any leftover configuration files and directories
+3. Remove any leftover configuration files and directories.
 
 ```sh
 sudo rm -rf /usr/local/cuda*
 ```
 
-4. Update your package lists and clean up any unnecessary dependencies
+4. Update your package lists and clean up any unnecessary dependencies.
 
 ```sh
 sudo apt-get autoremove
 sudo apt-get autoclean
 ```
 
-5. Verify Removal, run this command to ensure nvcc is no longer available
+5. Verify Removal, run this command to ensure nvcc is no longer available.
 
 ```sh
 nvcc --version
