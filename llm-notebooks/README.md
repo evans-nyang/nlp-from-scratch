@@ -6,6 +6,14 @@ The models will be leveraged from the HuggingFace library. The library provides 
 
 You'll need to set up the HuggingFace Account and create a new authentication token to be able to use the models. The token can be generated from the [HuggingFace website.](https://huggingface.co/settings/tokens)
 
+## Wandb
+
+The `wandb` library will be used to log the training process and visualize the training metrics. The library provides a simple API that can be used to log the training process and visualize the metrics in real-time.
+
+We'll use wandb to fine-tune the models. You can create an account on the [Wandb website.](https://wandb.ai/) and use the API token to authenticate the wandb library in your code.
+
+To obtain a wandb API token, you can create a new project on the wandb website and generate an API token from the project [settings page](https://wandb.ai/settings).
+
 ## Models
 
 The models that will be used in this notebook are:
