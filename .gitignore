@@ -171,7 +171,12 @@ cython_debug/
 .pypirc
 
 # my files
+logs/
 data/
+model/
 models/
 drivers/
-huggingface-notebooks/README*
+outputs/
+results/
+wandb/
+sentiment_model/
